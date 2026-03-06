@@ -81,7 +81,6 @@ namespace neptune {
     //% group="Registration"
     export function createCart(id: string, loadFunction: Function): Cartridge {
         const createdCart = new Cartridge(id, loadFunction);
-        console.log("(" + control.programName() + ") Registered new Cartridge: " + id);
         return createdCart;
     }
 
@@ -94,7 +93,6 @@ namespace neptune {
     //% group="Registration"
     export function createPlugin(id: string, plugin: Function): Plugin {
         const registeredPlugin = new Plugin(id, plugin);
-        console.log("(" + control.programName() + ") Registered plugin: " + id);
         return registeredPlugin;
     }
 }
