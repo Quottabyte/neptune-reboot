@@ -1,6 +1,6 @@
 {
     "name": "Neptune",
-    "description": "",
+    "description": "A neat little Cartridge system to allow for multiple games to be played and loaded in one MakeCode project, along with Plugins for said Cartridges. Also comes with a few other neat things!",
     "dependencies": {
         "device": "*"
     },

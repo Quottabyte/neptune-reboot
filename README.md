@@ -1,26 +1,46 @@
- 
+# Neptune
+Neptune is a Cartridge system that allows for more easily stopping and starting entire games in MakeCode, along with storing them more simply.
 
+## Registration
+Registration of Carts and Plugins is very simple, and extremely alike (they use the same parameters and format).
 
-> Open this page at [https://chemthunder.github.io/neptune-reboot/](https://chemthunder.github.io/neptune-reboot/)
+To register either a Cart or a Plugin, you'll need a string ID (In normal spelling, i.e "Test Cart"), and a load function.
 
-## Use as Extension
+A load function is a function that is used by a Cart or Plugin, that is run when that Cart is loaded / Plugin is bootstrapped.
 
-This repository can be added as an **extension** in MakeCode.
+This load function will contain all of the code, assets, and functions of your Cartridge. Think of them like little namespaces!
 
-* open [https://arcade.makecode.com/](https://arcade.makecode.com/)
-* click on **New Project**
-* click on **Extensions** under the gearwheel menu
-* search for **https://github.com/chemthunder/neptune-reboot** and import
+```
+    export let exampleCart = neptune.createCart("Example Cart", _exampleCartLoad);
 
-## Edit this project
+    export function _exampleCartLoad() {
+        scene.setBackgroundColor(3);
+    }
+```
+This will register a cart, `exampleCart`, and have the Cart set the background color upon being loaded.
 
-To edit this repository in MakeCode.
+This is similar to Plugins!
 
-* open [https://arcade.makecode.com/](https://arcade.makecode.com/)
-* click on **Import** then click on **Import URL**
-* paste **https://github.com/chemthunder/neptune-reboot** and click import
+```
+    export let examplePlugin = neptune.createPlugin("Example Plugin", _examplePluginBootstrap);
 
-#### Metadata (used for search, rendering)
+    export function _examplePluginBootstrap() {
+        scene.setBackgroundColor(3);
+    }
+```
 
-* for PXT/arcade
-<script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
+Now, to load a Cart / bootstrap a Plugin, the code is simple:
+
+```
+    neptune.loadCart(exampleCart);
+```
+
+```
+    neptune.bootstrapPlugin(examplePlugin);
+```
+
+And that is pretty much all you need to start making Plugins and Carts!
+
+Currently many desired utilities are not created in the base project, due to unpatchable crashes, such as a list of all Carts or deleting.
+
+# Thank You!

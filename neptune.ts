@@ -7,13 +7,13 @@ namespace neptune {
     /**
      * The currently loaded Cartridge.
      */
-    //% block
+    //% val
     export let currentlyLoadedCart: Cartridge;
 
     /**
      * The currently bootstrapped Plugin.
      */
-    //% block
+    //% val
     export let currentlyBootstrappedPlugin: Plugin;
 
     /**
