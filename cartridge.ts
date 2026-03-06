@@ -26,11 +26,4 @@ namespace neptune {
             this.loadFunction = i;
         }
     }
-
-    export function createCart(id: string, loadFunction: Function): Cartridge {
-        const createdCart = new Cartridge(id, loadFunction);
-
-        console.log("(" + control.programName() + ") Registered new Cartridge: " + id);
-        return createdCart;
-    }
 }

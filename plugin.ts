@@ -3,7 +3,6 @@ Allows for plugins that can modify carts or neptune as a whole
 */
 
 namespace neptune {
-
     export class Plugin {
         _id: string;
         _plugin: Function;
@@ -28,12 +27,5 @@ namespace neptune {
         set plugin(i: Function) {
             this.plugin = i;
         }
-    }
-
-    export function bootstrap(plugin: Plugin) {
-        const pluginToRun: Function = plugin.plugin;
-        pluginToRun();
-
-        console.log("(" + control.programName() + ") Bootstrapped plugin: " + plugin.id);
     }
 }
